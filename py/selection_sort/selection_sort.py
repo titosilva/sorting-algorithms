@@ -4,18 +4,9 @@ from sort_strategy import SortStrategy
 class SelectionSortStrategy(SortStrategy):
     view_array = []
     sorted_array = []
-    current_index = 0
 
     def __init__(self, array: List[any]) -> None:
         super().__init__(array)
-
-    def __go_to_next(self):
-        self.view_array = []
-        self.current_index += 1
-        if self.current_index == len(self.initial_array):
-            raise StopIteration
-
-        print("Selected element: " + str(self.initial_array[self.current_index-1]))
     
     def __next__(self):
         # Trivial cases
