@@ -20,13 +20,13 @@ class InsertionSortStrategy(SortStrategy):
     def __next__(self):
         # Trivial cases
         if self.initial_array == []:
-            return []
+            raise StopIteration
         
         if len(self.initial_array) == 1:
-            return self.initial_array
+            raise StopIteration
 
         if len(self.sorted_array) == len(self.initial_array):
-            return self.sorted_array
+            raise StopIteration
 
         if self.view_array == []:
             self.view_array = [self.sorted_array, self.initial_array[self.current_index], []]
