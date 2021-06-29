@@ -1,3 +1,4 @@
+from bubble_sort.bubble_sort import BubbleSortStrategy
 from sort_strategy import SortStrategy
 from selection_sort.selection_sort import SelectionSortStrategy
 from insertion_sort.insertion_sort import InsertionSortStrategy
@@ -24,17 +25,19 @@ algorithms = [
         "name": "Selection Sort",
         "strategy": SelectionSortStrategy,
     },
+    {
+        "name": "Bubble Sort",
+        "strategy": BubbleSortStrategy,
+    },
 ]
 
 if __name__ == "__main__":
-    print("Available algorithms:")
-
-    for idx, info in enumerate(algorithms):
-        print(str(idx) + " - " + info["name"])
-
-
     while True:
         try:
+            print("Available algorithms:")
+            for idx, info in enumerate(algorithms):
+                print(str(idx) + " - " + info["name"])
+            
             selected = int(input("Please, type a number: "))
 
             if idx < 0 or idx >= len(algorithms):
